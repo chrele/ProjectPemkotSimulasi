@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	<title>
-		Simulasi Retribusi
+		Surabaya SSW | Simulasi Retribusi
 	</title>
-	<!-- Latest compiled and minified CSS -->
+	<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" id="metrolics_style-css" href="assets/css/style_ori.css" type="text/css" media="all">
+	<link rel="stylesheet" id="metrolics_ubuntu-css" href="assets/font/ubuntu.css" type="text/css" media="all">
+	<link rel="stylesheet" id="metrolics_responsive-css" href="assets/css/responsive.css" type="text/css" media="all">
+	<link rel="stylesheet" id="metrolics_hover_style-css" href="assets/css/component.css" type="text/css" media="all">
+	<link rel="stylesheet" href="assets/font/oswald.css" type="text/css">
+	<link type="text/css" rel="stylesheet" href="assets/css/featherlight.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
 	<!-- Latest compiled and minified JavaScript -->
+	<script async="" src="https://www.google-analytics.com/analytics.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<style type="text/css">
+		body, h1, h2, h3, h4, h5, h6, input, textarea, select { 
+			font-family:'Ubuntu', sans-serif; 
+			
+		} 
+		body {
+			height: 100%;
+		}
 		.main-content {
 			margin-top: 5em;
 		}
@@ -23,29 +41,191 @@
 		header {
 			margin top: 4em;	
 		}
+		.top-title{
+			font-family: "Oswald";
+		    font-weight: bold;
+		    font-size: 31px;
+		    margin: 18px 0;
+		}
+		.content-header {
+			text-align: center;
+			vertical-align: middle;
+		}
+		.pedoman {
+			/* Internet Explorer 10 */
+			display:-ms-flexbox!important; 
+			-ms-flex-pack:center!important;
+			-ms-flex-align:center!important;
+
+			/* Firefox */
+			display:-moz-box!important;
+			-moz-box-pack:center!important;
+			-moz-box-align:center!important;
+
+			/* Safari, Opera, and Chrome */
+			display:-webkit-box!important;
+			-webkit-box-pack:center!important;
+			-webkit-box-align:center!important;
+
+			/* W3C */
+			display:box!important;
+			box-pack:center!important;
+			box-align:center!important;
+
+			float: right;
+
+			padding: 2em;
+		}
+		.content-header {
+			font-family: "Ubuntu";
+			font-weight: bold;
+			font-size: 28px;
+			letter-spacing: 3px;
+			margin-bottom: 3%;
+			margin-top: 3%;
+		}
 	</style>
 </head>
 <body style="align-content: center; text-align: center;">
-	<div class="main">
-		<header>
-			<h3>
-				PEDOMAN TEKNIS ARAHAN SISTEM DRAINASE KOTA SURABAYA	
-			</h3>
+	<div id="preloader" style="display: none;">
+		<div id="status" style="display: none;">&nbsp;</div>
+	</div>
+	<div id="container" style="background: #F3F3F3;">
+		<header style="background: #D71D43; border-bottom: 4px solid #91132D;">
+			<div class="inside clear">
+				<link rel="stylesheet" type="text/css" href="assets/css/style.css" media="screen">
+				<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+				<style type="text/css">
+					.cf-hidden { display: none; } .cf-invisible { visibility: hidden; }.style1 {
+					color: #FFFFFF;
+					font-weight: bold;
+				}
+				</style>
+				<script type="text/javascript" src="assets/js/menu.js"></script>
+				<div class="mainWrap">
+					<a id="touch-menu" class="mobile-menu" href="#">
+						<i class="icon-reorder"></i>
+						Menu
+					</a>
+					<nav>
+						<ul class="menu" style="font-size: 14px;">
+							<li style="float: left;">
+								<a href="http://ssw.surabaya.go.id/">
+									<i class="fa fa-home"></i>
+									&nbsp;Beranda
+								</a>
+							</li>
+							<li style="float: left;">
+								<a href="http://ssw.surabaya.go.id/index.php?hal=login">
+									<i class="fa fa-lock"></i>
+									&nbsp; Login
+								</a>
+							</li>
+							<li style="float: left;">
+								<a href="http://ssw.surabaya.go.id/index.php?hal=daftar">
+									<i class="fa fa-edit"></i>
+									&nbsp; Registrasi
+								</a>
+							</li>
+							<li style="float: right;">
+								<a href="http://ssw.surabaya.go.id/info/pemohon/PANDUAN_CETAK_SK.pdf" target="_blank">
+									<i class="fa fa-download"></i>
+									&nbsp; Panduan Cetak SK
+								</a>
+							</li>
+							<li style="float: right;">
+								<a href="http://ssw.surabaya.go.id/info/pemohon/USER%20GUIDE%20INFO%20MONITORING%20BERKAS%20-%20LUPA%20PIN.pdf" target="_blank">
+									<i class="fa fa-download"></i>
+									&nbsp; Panduan Monitoring
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
 		</header>
-		<div class="container main-content">
-			<form class="col-xs-12" method="POST">
-				<span class="col-xs-4"></span>
-				<div class="col-xs-2">
-					<a class="btn-info btn-primary button-custom" role="button" href="rekom-page.html">REKOM</a>	
+		<header>
+			<div class="inside clear">
+				<aside class="logo clear" style="padding-top: 0px;"> 
+					<div class="top-title">
+						<img src="assets/img/logo-sby.png" style="height: 40px; vertical-align: middle;" align="middle">
+						SURABAYA
+						<font color="#D71D43">SINGLE WINDOW</font>
+						
+					</div>				
+				</aside>
+				<div class="pedoman">
+					<a href="#"><i class="fa fa-download"></i> Lihat Pedoman</a>
 				</div>
-				<div class="col-xs-2">
-					<a class="btn-info button-custom" role="button" href="kajian-page.html">KAJIAN</a>	
+			</div>
+		</header>
+		<section class="portofolio-showcase-block">
+			<div class="inside" style="">
+				<div class="content-header">
+					PEDOMAN TEKNIS ARAHAN<br>
+					SISTEM DRAINASE KOTA SURABAYA
 				</div>
-				
-				<span class="col-xs-4"></span>
-				<a class="col-xs-12" href="#">Lihat Pedoman</a>
-			</form>
-		</div>
+				<div class="caption-style-4 clear" style="text-align: center;">
+					<div style="cursor: pointer; text-align: left;" class="post-41 metrolics_portfolio type-metrolics_portfolio status-publish hentry featured-list portfolio-blue">
+						<a href="rekom-page.html" data-featherlight="ajax">
+							<div class="featured-content">
+								<img src="assets/img/rekom.png" style=" width: 356px; height: 220px;" class="attachment-post-thumbnail wp-post-image">
+								<div class="featured-desc">
+									<h4>
+										REKOM
+									</h4>
+									<span class="feat-category">
+										Ini deskripsi halaman Rekom
+									</span>
+									<span class="feat-icon">
+										<i class="fa fa-globe fa-lg"></i>
+									</span>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div style="cursor: pointer; text-align: left;" class="post-41 metrolics_portfolio type-metrolics_portfolio status-publish hentry featured-list portfolio-green">
+						<a href="site-plan-page.html" data-featherlight="ajax">
+							<div class="featured-content">
+								<img src="assets/img/siteplan.png" style=" width: 356px; height: 220px;" class="attachment-post-thumbnail wp-post-image">
+								<div class="featured-desc">
+									<h4>
+										KAJIAN - SITE PLAN
+									</h4>
+									<span class="feat-category">
+										Ini deskripsi halaman Kajian - Site Plan
+									</span>
+									<span class="feat-icon">
+										<i class="fa fa-globe fa-lg"></i>
+									</span>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div style="cursor: pointer; text-align: left;" class="post-41 metrolics_portfolio type-metrolics_portfolio status-publish hentry featured-list portfolio-pink last">
+						<a href="mixed-use-page.html" data-featherlight="ajax">
+							<div class="featured-content">
+								<img src="assets/img/mixeduse.png" style=" width: 356px; height: 220px;" class="attachment-post-thumbnail wp-post-image">
+								<div class="featured-desc">
+									<h4>
+										KAJIAN - MIXED USE
+									</h4>
+									<span class="feat-category">
+										Ini deskripsi halaman Kajian - Mixed Use
+									</span>
+									<span class="feat-icon">
+										<i class="fa fa-globe fa-lg"></i>
+									</span>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>			
+		<footer style="background: inherit;">
+			Copyright &copy; 2019 Christopher Andrew - Muhammad Ryanda Nugraha N. M.
+		</footer>
 	</div>
 </body>
 </html>
