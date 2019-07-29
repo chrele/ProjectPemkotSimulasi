@@ -55,36 +55,52 @@
 					<span class="col-xs-3"></span>
 					<div class=" col-xs-8" style="align-content: center; margin: 0em 0em 1% 0em; padding: 0;">
 						<div class="col-xs-12" style="padding: 0;">
+						<!-- 1	0.65
+						2	0.60
+						3	0.75
+						4	0.70
+						5	0.75
+						6	0.85
+						7	0.70
+						8	0.90
+						9	0.20
+						10	0.15 -->
+
+							<!-- Retail = C Kel 3 0.75
+							Apartemen = C Kel 7 0.70
+							Pusat Perbel. = C Kel 8 0.90
+							Jalan = C Kel 6 0.85
+							RTH = C Kel 9 0.20-->
 							<div>
-								<label class="col-xs-4" style="padding: 0;"><input id="checkbox-retail" type="checkbox" name="retail-checkbox" style="margin-right: 1em;">4.1 Retail</label>
+								<label class="col-xs-4" style="padding: 0;"><input id="checkbox-retail" type="checkbox" name="retail-checkbox" value="0.75" style="margin-right: 1em;">4.1 Retail</label>
 								<input id="text-retail-persen" value="0" type="text" onchange="getLuas()" name="nilai-KLB" disabled>
 								<label>%</label>
 								<input id="text-retail-luas" type="text" name="retail" disabled>
 								<label>m2</label>	
 							</div>
 							<div>
-								<label class="col-xs-4" style="padding: 0;"><input id="checkbox-apartemen" type="checkbox" name="apartemen-checkbox" style="margin-right: 1em;">4.2 Apartemen</label>
+								<label class="col-xs-4" style="padding: 0;"><input id="checkbox-apartemen" type="checkbox" name="apartemen-checkbox" value="0.70" style="margin-right: 1em;">4.2 Apartemen</label>
 								<input id="text-apartemen-persen" value="0" type="text" onchange="getLuas()" name="nilai-KLB" disabled>
 								<label>%</label>
 								<input id="text-apartemen-luas" type="text" name="apartemen" disabled>
 								<label>m2</label>
 							</div>
 							<div>
-								<label class="col-xs-4" style="padding: 0;"><input id="checkbox-perbelanjaan" type="checkbox" name="pusat-belanja-checkbox" style="margin-right: 1em;">4.3 Pusat Perbelanjaan</label>
+								<label class="col-xs-4" style="padding: 0;"><input id="checkbox-perbelanjaan" type="checkbox" name="pusat-belanja-checkbox" value="0.90" style="margin-right: 1em;">4.3 Pusat Perbelanjaan</label>
 								<input id="text-perbelanjaan-persen" value="0" type="text" onchange="getLuas()" name="nilai-KLB" disabled>
 								<label>%</label>
 								<input id="text-perbelanjaan-luas" type="text" name="pusat-belanja" disabled>
 								<label>m2</label>
 							</div>
 							<div>
-								<label class="col-xs-4" style="padding: 0;"><input id="checkbox-jalan" type="checkbox" name="jalan-checkbox" style="margin-right: 1em;" checked disabled>4.4 Jalan</label>
-								<input id="text-jalan-persen"  type="text" name="jalan-persen" disabled>
+								<label class="col-xs-4" style="padding: 0;"><input id="checkbox-jalan" type="checkbox" name="jalan-checkbox" value="0.85" style="margin-right: 1em;" checked disabled>4.4 Jalan</label>
+								<input id="text-jalan-persen"  type="text" value="0" name="jalan-persen" disabled>
 								<label>%</label>
-								<input id="text-jalan-luas" type="text" name="jalan" disabled>
+								<input id="text-jalan-luas" type="text"  name="jalan" disabled>
 								<label>m2</label>
 							</div>
 							<div>								
-								<label class="col-xs-4" style="padding: 0;"><input id="checkbox-RTH" type="checkbox" name="rth-checkbox" style="margin-right: 1em;" checked disabled >4.5 RTH</label>
+								<label class="col-xs-4" style="padding: 0;"><input id="checkbox-RTH" type="checkbox" name="rth-checkbox" value="0.20" style="margin-right: 1em;" checked disabled >4.5 RTH</label>
 								<input id="text-RTH-persen"  type="text" name="rth-persen" value="20" disabled>
 								<label>%</label>
 								<input id="text-RTH-luas" type="text" name="rth" disabled>
@@ -103,27 +119,42 @@
 		</div>
 	</div>
 	<script >
-		document.getElementById('checkbox-retail').onchange = function() {
+
+		document.getElementById('checkbox-retail').onclick = function() {
    		 	document.getElementById('text-retail-persen').disabled = !this.checked;
+   		 	document.getElementById('text-retail-persen').value = 0;
+   		 	getLuas();
 		};
-		document.getElementById('checkbox-apartemen').onchange = function() {
+		document.getElementById('checkbox-apartemen').onclick = function() {
    		 	document.getElementById('text-apartemen-persen').disabled = !this.checked;
+   		 	document.getElementById('text-apartemen-persen').value = 0;
+   		 	getLuas();
 		};
-		document.getElementById('checkbox-perbelanjaan').onchange = function() {
+		document.getElementById('checkbox-perbelanjaan').onclick = function() {
    		 	document.getElementById('text-perbelanjaan-persen').disabled = !this.checked;
+   		 	document.getElementById('text-perbelanjaan-persen').value = 0;
+   		 	getLuas();
 		};
 
 		function getLuas(){
 			var klb = document.querySelectorAll('input[name=nilai-KLB]:enabled')
 			var allklb = document.querySelectorAll('input[name=nilai-KLB]')
 			var luaslahan=document.getElementById("totallahan").value
+			var koefisien = document.querySelectorAll('input[type=checkbox]:checked')
+			var arraykoef=[]
 			var arrayklb=[]
 			var jumlahklb=0
+			var jumlahkoef=0
 			var jalan=0
+			var volumtampung=0
 		    console.log("Jumlah klb="+klb.length);
 		    for (var i = 0; i < klb.length; i++) {
 					arrayklb.push(klb[i].value)
 	  				jumlahklb=jumlahklb+Number(klb[i].value)
+				}
+			for (var i = 0; i < (koefisien.length)-2; i++) {
+					arraykoef.push(koefisien[i].value)
+	  				jumlahkoef=jumlahkoef+Number(koefisien[i].value)
 				}
 			if(jumlahklb>60){
 				alert("Total KLB tidak diperbolehkan melebihi 60%");
@@ -132,42 +163,51 @@
 				document.getElementById("text-perbelanjaan-persen").value = 0;
 				document.getElementById("text-jalan-persen").value = 0;
 				document.getElementById("volumetampung").value = 0;
+				document.getElementById("volumetampung").style.backgroundColor = "red";
 				jumlahklb=0
+			}
+			else{
+				document.getElementById("volumetampung").style.backgroundColor = "white";
 			}
 			jalan=100-20-jumlahklb
 			document.getElementById("text-jalan-persen").value=jalan	
-			var luasretail=Number(allklb[0].value)/100*luaslahan*0.000001;
-			var luasapartemen=Number(allklb[1].value)/100*luaslahan*0.000001;
-			var luasPerbelanjaan=Number(allklb[2].value)/100*luaslahan*0.000001;
-			var luasjalan=jalan/100*luaslahan*0.000001;
-			var luasrth=20/100*luaslahan*0.000001;
+			var luasretail=Number(allklb[0].value)/100*luaslahan;
+			var luasapartemen=Number(allklb[1].value)/100*luaslahan;
+			var luasPerbelanjaan=Number(allklb[2].value)/100*luaslahan;
+			var luasjalan=jalan/100*luaslahan;
+			var luasrth=20/100*luaslahan;
 			document.getElementById("text-retail-luas").value = Number(allklb[0].value)*luaslahan/100;
 			document.getElementById("text-apartemen-luas").value = Number(allklb[1].value)*luaslahan/100;
 			document.getElementById("text-perbelanjaan-luas").value = Number(allklb[2].value)*luaslahan/100;
 			document.getElementById("text-jalan-luas").value = jalan*luaslahan/100;
 			document.getElementById("text-RTH-luas").value = 20*luaslahan/100;
 			var cgab=0
-			var cmax=Math.max(...arrayklb)
+			var cmax=Math.max(...arraykoef)
 			var lsisa=(luasretail)+(luasapartemen)+(luasPerbelanjaan)
 			var crth=0.2
 			var cjalan=0.85
 			var I=31.637
 			var A=luaslahan*0.000001
 			console.log("cmax="+cmax);
-			cgab=((cmax*lsisa)+(crth*luasrth)+(cjalan*luasjalan))/(A)
+			cgab=((cmax*lsisa)+(crth*luasrth)+(cjalan*luasjalan))/(luaslahan)
 			console.log("cgab="+cgab);
 			var Q=0.278*cgab*I*A
 			console.log("Q="+Q);
 			var jam=0
 			var detik=0
-			if(A>1000&&A<=10000){
+			if(luaslahan>1000&&luaslahan<=10000){
 				jam=2
 			}
-			else if(A>10000){
+			else if(luaslahan>10000){
 				jam=3
 			}
 			detik=jam*3600
-			var volumtampung=Q*detik
+			console.log("detik="+detik);
+			volumtampung=Q*detik
+			console.log("volumtampung A="+volumtampung);
+			if(!isFinite(volumtampung)){
+				volumtampung=0
+			}
 			console.log("volumtampung="+volumtampung);
 			document.getElementById("volumetampung").value=volumtampung
 
