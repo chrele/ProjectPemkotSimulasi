@@ -21,27 +21,42 @@
 			margin: 1em;
 		}
 		header {
-			margin top: 4em;	
+			margin top: 4em;
+            text-align: center;
 		}
+        sup {
+            vertical-align: super;
+            font-size: smaller;
+        }
+        labelnum {
+            font color: red;
+        }
 	</style>
 </head>
 <body style="align-content: center;">
 	<div class="main">
 		<header>
 			<h3>
-				INFORMASI YANG TERTERA PADA SKRK
+				KAJIAN SITE PLAN
 			</h3>
 		</header>
 		<div class="container main-content">
+            
+        <h4>Informasi yang tertera pada SKRK:</h4>
+        &nbsp;
 			<form  class="col-xs-12" method="POST">
 				<div class="col-xs-12">
 					<label class="col-xs-3">1. Total Luas Lahan</label>
 					<input id="TotalLuasLahan" type="text" name="sisa-lahan">
-					<label>m2</label>
+					<label>m<sup>2</sup></label>
 				</div>
-				<hr>
+                <hr>
+                &nbsp;
+                <div class="col-xs-12">
+                    <label class="col-xs-3">2. Jumlah Kegiatan</label>
+                    <a href="assets/files/Tabel%20Pembagian%20Fungsi%20Lahan%20sesuai%20Perwali%20no%2052%20tahun%202017.pdf" target="_blank">Lihat Panduan</a>
+                </div>
 				<div class="col-xs-12">
-					<label class="col-xs-12">2. Jumlah Kegiatan</label>
 					<span class="col-xs-3"></span>
 					<div class=" col-xs-8" style="align-content: center; margin: 0em 0em 1% 0em; padding: 0;">
 						<div class="col-xs-12" style="padding: 0;">
@@ -52,34 +67,46 @@
 								Sarana RTH = C Kel 9 value="0.20"
 								Prasarana jln = C Kel 6 value="0.85"
 								Makam = C Kel 10 value="0.15" -->
-								<label class="col-xs-5" style="padding: 0;"><input id="checkbox-perumahan" type="checkbox" name="perumahan-checkbox" value="0.65" style="margin-right: 1em;">Perumahan</label>
-								<input id="text-perumahan" type="text" name="nilailuas" value="0" onchange="checkTotalLuas()" disabled>
-								<label>m2</label>	
+								<label class="col-xs-5" style="padding: 0;">
+                                <img src="assets/img/bg%20kuning.jpg" width="20px" height="15px">
+                                    <input id="checkbox-perumahan" type="checkbox" name="perumahan-checkbox" value="0.65" style="margin-right: 1em;">Perumahan</label>
+                                <input id="text-perumahan" type="text" name="nilailuas" value="0" onchange="checkTotalLuas()" disabled>
+								<label>m<sup>2</sup></label>	
 							</div>
 							<div>
-								<label class="col-xs-5" style="padding: 0;"><input id="checkbox-perdagangan" type="checkbox" name="perdagangan-checkbox" value="0.60" style="margin-right: 1em;">Perdagangan / Jasa Komersial</label>
+								<label class="col-xs-5" style="padding: 0;">
+                                <img src="assets/img/bg%20ungu.jpg" width="20px" height="15px">
+                                    <input id="checkbox-perdagangan" type="checkbox" name="perdagangan-checkbox" value="0.60" style="margin-right: 1em;">Perdagangan / Jasa Komersial</label>
 								<input id="text-perdagangan" type="text" name="nilailuas" value="0" onchange="checkTotalLuas()" disabled>
-								<label>m2</label>
+								<label>m<sup>2</sup></label>
 							</div>
 							<div>
-								<label class="col-xs-5" style="padding: 0;"><input id="checkbox-fasilitasUmum" type="checkbox" name="fasilitas-umum-checkbox" value="0.60" style="margin-right: 1em;">Sarana Fasilitas Umum PemKot</label>
+								<label class="col-xs-5" style="padding: 0;">
+                                <img src="assets/img/bg%20pink.jpg" width="20px" height="15px">
+                                    <input id="checkbox-fasilitasUmum" type="checkbox" name="fasilitas-umum-checkbox" value="0.60" style="margin-right: 1em;">Sarana Fasilitas Umum PemKot</label>
 								<input id="text-fasilitasUmum" type="text" name="nilailuas" value="0" onchange="checkTotalLuas()" disabled>
-								<label>m2</label>
+								<label>m<sup>2</sup></label>
 							</div>
 							<div>
-								<label class="col-xs-5" style="padding: 0;"><input id="checkbox-ruangHijau" type="checkbox" name="ruang-hijau-checkbox" value="0.20" style="margin-right: 1em;">Sarana Ruang Terbuka Hijau PemKot</label>
+								<label class="col-xs-5" style="padding: 0;">
+                                <img src="assets/img/bg%20hijau.jpg" width="20px" height="15px">
+                                    <input id="checkbox-ruangHijau" type="checkbox" name="ruang-hijau-checkbox" value="0.20" style="margin-right: 1em;">Sarana Ruang Terbuka Hijau PemKot</label>
 								<input id="text-ruangHijau" type="text" name="nilailuas" value="0" onchange="checkTotalLuas()" disabled>
-								<label>m2</label>
+								<label>m<sup>2</sup></label>
 							</div>
 							<div>								
-								<label class="col-xs-5" style="padding: 0;"><input id="checkbox-jalanSaluran" type="checkbox" name="jalan-saluran-checkbox" value="0.85" style="margin-right: 1em;">Prasarana Jalan Saluran PemKot</label>
+								<label class="col-xs-5" style="padding: 0;">
+                                <img src="assets/img/bg%20putih.jpg" width="20px" height="15px">
+                                    <input id="checkbox-jalanSaluran" type="checkbox" name="jalan-saluran-checkbox" value="0.85" style="margin-right: 1em;">Prasarana Jalan Saluran PemKot</label>
 								<input id="text-jalanSaluran" type="text" name="nilailuas" value="0" onchange="checkTotalLuas()" disabled>
-								<label>m2</label>
+								<label>m<sup>2</sup></label>
 							</div>
 							<div>
-								<label class="col-xs-5" style="padding: 0;"><input id="checkbox-makam" type="checkbox" name="makam-checkbox" value="0.15" style="margin-right: 1em;">Makam</label>
+								<label class="col-xs-5" style="padding: 0;">
+                                <img src="assets/img/bg%20makam.jpg" width="20px" height="15px">
+                                    <input id="checkbox-makam" type="checkbox" name="makam-checkbox" value="0.15" style="margin-right: 1em;">Makam</label>
 								<input id="text-makam" type="text" name="nilailuas" value="0" onchange="checkTotalLuas()" disabled>
-								<label>m2</label>
+								<label>m<sup>2</sup></label>
 							</div>								
 						</div>
 					</div>
@@ -87,13 +114,18 @@
 				<hr>
 				<div class="col-xs-12">
 					<label class="col-xs-3">3. Informasi Sisa Lahan</label>
-					<input id="infosisalahan" type="text" onchange="checkTotalLuas()" name="info-sisa-lahan" value="0" disabled>
-					<label>m2</label>
+                <!--    <label id="infosisalahan" onchange="checkTotalLuas()" name="info-sisa-lahan" >0</label> -->
+                    <label id="infosisalahan" onchange="checkTotalLuas()" name="info-sisa-lahan">0</label>
+					<label>m<sup>2</sup></label>
+                    <label id="warninginfosisalahan" style="font-style:italic; font-size: 10pt;"></label>
 				</div>
+                <hr>
+                &nbsp;
 				<div class="col-xs-12">
 					<label class="col-xs-3">4. Volume Tampungan</label>
-					<input id="volumetampung" type="text" name="info-volume-tampungan" value="0" disabled>
-					<label>m3</label>
+                    <label id="volumetampung">0</label>
+					<!-- <input id="volumetampung" type="text" name="info-volume-tampungan" value="0" disabled> -->
+					<label>m<sup>3</sup></label>
 				</div>
 			</form>
 		</div>
@@ -143,6 +175,7 @@
 		    var cgab=0
 		    var jam=0
 		    var detik=0
+            var I = 31.63678536284750000
 		    var luasan = document.querySelectorAll('input[name=nilailuas]')
 		    console.log("Jumlah allinput="+luasan.length);
 		    var koefisien = document.querySelectorAll('input[type=checkbox]')
@@ -163,13 +196,13 @@
 			// 	document.getElementById("infosisalahan").style.backgroundColor = "white";
 			// 	// document.getElementsByName("nilailuas").style.backgroundColor = "white";
 			// }
-			jumlahluaskm=jumlahluas*0.000001
+			jumlahluaskm=jumlahluas/1000000
 			for (var i = 0; i < koefisien.length; i++) {
   					arraykoefisien.push(koefisien[i].value)
   					jumlahkoefisien=jumlahkoefisien+Number(koefisien[i].value)
 				}
 			for (var i = 0; i < koefisien.length; i++) {
-					cgab=cgab+(luasan[i].value*koefisien[i].value*0.000001)	
+					cgab=cgab+(luasan[i].value*koefisien[i].value/1000000)	
 				}
 			cgab=cgab/jumlahluaskm
 			if(jumlahluas>=500&&jumlahluas<=1000){
@@ -182,21 +215,25 @@
 				jam=3
 			}
 			detik=jam*3600
+            
 			var sisalahaninfo=0
-			sisalahaninfo=totalluas-jumlahluas
-			document.getElementById("infosisalahan").value = sisalahaninfo;
+			sisalahaninfo=(totalluas-jumlahluas).toFixed(2)
+			document.getElementById("infosisalahan").textContent = sisalahaninfo;
 			var selisih = totalluas-jumlahluas
-			var volumetampung=0.278*cgab*31.637*jumlahluaskm*detik
+			var volumetampung=0.278*cgab*I*jumlahluaskm*detik
 			if (selisih!=0)
 				{
-					document.getElementById("infosisalahan").style.backgroundColor = "red";
+					document.getElementById("infosisalahan").style.color = "red";
+                    document.getElementById("volumetampung").textContent = 0;
+                    document.getElementById("warninginfosisalahan").textContent = "[Petunjuk: sisa lahan harus 0]";
 				}
 			else{	
-				document.getElementById("infosisalahan").style.backgroundColor = "white";
+				document.getElementById("infosisalahan").style.color = "black";
+                document.getElementById("warninginfosisalahan").textContent ="";
 				if(!isFinite(volumetampung)){
 				volumetampung=0
 			}		
-				document.getElementById("volumetampung").value=volumetampung	
+				document.getElementById("volumetampung").textContent=volumetampung.toFixed(3)
 			}
 		}
 

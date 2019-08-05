@@ -21,37 +21,46 @@
 			margin: 1em;
 		}
 		header {
-			margin top: 4em;	
+			margin top: 4em;
+            text-align: center;
 		}
+        sup {
+            vertical-align: super;
+            font-size: smaller;
+        }
 	</style>
 </head>
 <body style="align-content: center;">
 	<div class="main">
 		<header>
-			<h3>
-				INFORMASI YANG TERTERA PADA SKRK
-			</h3>
+			<h3>KAJIAN MIXED USE</h3>
 		</header>
 		<div class="container main-content">
+            <h4>Informasi yang tertera pada SKRK:</h4>
+            &nbsp;
 			<form class="col-xs-12" method="POST">
 				<div class="col-xs-12">
 					<label class="col-xs-3">1. Total Luas Lahan</label>
 					<input id="totallahan" type="text" name="sisa-lahan">
-					<label>m2</label>
+					<label>m<sup>2</sup></label>
 				</div>
 				<div class="col-xs-12">
 					<label class="col-xs-3">2. Persentase KDB</label>
 					<input type="text" id="chk60" onchange="check60(this)" name="sisa-lahan">
-					<label>m2</label>
+					<label>%</label>
 				</div>
 				<div class="col-xs-12">
 					<label class="col-xs-3">3. Luas Dasar Bangunan</label>
 					<input id="luasdasarbangunan" type="text" name="sisa-lahan" disabled>
-					<label>m2</label>
+					<label>m<sup>2</sup></label>
 				</div>
 				<hr>
+                &nbsp;
 				<div class="col-xs-12">
-					<label class="col-xs-12">4. Jumlah Kegiatan</label>
+					<label class="col-xs-3">4. Jumlah Kegiatan</label>
+                    <a href="assets/files/Tabel%20Pembagian%20Fungsi%20Lahan%20sesuai%20Perwali%20no%2052%20tahun%202017.pdf" target="_blank">Lihat Pedoman</a>
+                </div>
+                <div class="col-xs-12">
 					<span class="col-xs-3"></span>
 					<div class=" col-xs-8" style="align-content: center; margin: 0em 0em 1% 0em; padding: 0;">
 						<div class="col-xs-12" style="padding: 0;">
@@ -72,160 +81,192 @@
 							Jalan = C Kel 6 0.85
 							RTH = C Kel 9 0.20-->
 							<div>
-								<label class="col-xs-4" style="padding: 0;"><input id="checkbox-retail" type="checkbox" name="retail-checkbox" value="0.75" style="margin-right: 1em;">4.1 Retail</label>
-								<input id="text-retail-persen" value="0" type="text" onchange="getLuas()" name="nilai-KLB" disabled>
-								<label>%</label>
-								<input id="text-retail-luas" type="text" name="retail" disabled>
-								<label>m2</label>	
+								<label class="col-xs-4" style="padding: 0;">
+                                <input id="checkbox-retail" type="checkbox" name="retail-checkbox" value="0.75" style="margin-right: 1em;">4.1 Retail</label>
+								<input id="text-retail-luas" type="text" onchange="getLuas()" name="bangunantext" value="0" disabled>
+								<label>m<sup>2</sup></label>	
 							</div>
 							<div>
-								<label class="col-xs-4" style="padding: 0;"><input id="checkbox-apartemen" type="checkbox" name="apartemen-checkbox" value="0.70" style="margin-right: 1em;">4.2 Apartemen</label>
-								<input id="text-apartemen-persen" value="0" type="text" onchange="getLuas()" name="nilai-KLB" disabled>
-								<label>%</label>
-								<input id="text-apartemen-luas" type="text" name="apartemen" disabled>
-								<label>m2</label>
+								<label class="col-xs-4" style="padding: 0;">
+                                    <input id="checkbox-apartemen" type="checkbox" name="apartemen-checkbox" value="0.70" style="margin-right: 1em;">4.2 Apartemen</label>
+								<input id="text-apartemen-luas" type="text" onchange="getLuas()" name="bangunantext" value="0" disabled>
+								<label>m<sup>2</sup></label>
 							</div>
 							<div>
-								<label class="col-xs-4" style="padding: 0;"><input id="checkbox-perbelanjaan" type="checkbox" name="pusat-belanja-checkbox" value="0.90" style="margin-right: 1em;">4.3 Pusat Perbelanjaan</label>
-								<input id="text-perbelanjaan-persen" value="0" type="text" onchange="getLuas()" name="nilai-KLB" disabled>
-								<label>%</label>
-								<input id="text-perbelanjaan-luas" type="text" name="pusat-belanja" disabled>
-								<label>m2</label>
-							</div>
-							<div>
-								<label class="col-xs-4" style="padding: 0;"><input id="checkbox-jalan" type="checkbox" name="jalan-checkbox" value="0.85" style="margin-right: 1em;" checked disabled>4.4 Jalan</label>
-								<input id="text-jalan-persen"  type="text" value="0" name="jalan-persen" disabled>
-								<label>%</label>
-								<input id="text-jalan-luas" type="text"  name="jalan" disabled>
-								<label>m2</label>
+								<label class="col-xs-4" style="padding: 0;"> 
+                                    <input id="checkbox-perbelanjaan" type="checkbox" name="pusat-belanja-checkbox" value="0.90" style="margin-right: 1em;">4.3 Pusat Perbelanjaan</label>
+								<input id="text-perbelanjaan-luas" type="text" onchange="getLuas()" name="bangunantext" value="0" disabled>
+								<label>m<sup>2</sup></label>
 							</div>
 							<div>								
-								<label class="col-xs-4" style="padding: 0;"><input id="checkbox-RTH" type="checkbox" name="rth-checkbox" value="0.20" style="margin-right: 1em;" checked disabled >4.5 RTH</label>
-								<input id="text-RTH-persen"  type="text" name="rth-persen" value="20" disabled>
-								<label>%</label>
-								<input id="text-RTH-luas" type="text" name="rth" disabled>
-								<label>m2</label>
+								<label class="col-xs-4" style="padding: 0;"><input id="checkbox-RTH" type="checkbox" name="rth-checkbox" value="0.20" style="margin-right: 1em;" checked disabled >4.4 RTH</label>
+								<input id="text-RTH-luas" type="text" onchange="getLuas()" name="bangunantext" value="0" >
+								<label>m<sup>2</sup></label>
+							</div>
+                            <div>
+								<label class="col-xs-4" style="padding: 0;">
+                                    <input id="checkbox-jalan" type="checkbox" name="jalan-checkbox" value="0.85" style="margin-right: 1em;" checked disabled>4.5 Jalan</label>
+								<input id="text-jalan-luas" type="text" onchange="getLuas()" name="bangunantext" value="0" >
+								<label>m<sup>2</sup></label>
 							</div>
 						</div>
 					</div>
 				</div>
+                <div class="col-xs-12">
+                    <label class="col-xs-3">5. Info Sisa Lahan</label>
+                    <label id="infosisalahan" onchange="getLuas()" name="info-sisa-lahan">0</label>
+					<label>m<sup>2</sup></label>
+                    <label id="warninginfosisalahan" style="font-style:italic; font-size: 10pt;"></label>
+                </div>
 				<hr>
+                &nbsp;
 				<div class="col-xs-12">
-					<label class="col-xs-3">5. Volume Tampungan</label>
-					<input id="volumetampung" type="text" value="0" name="info-volume-tampungan" disabled>
-					<label>m3</label>
+					<label class="col-xs-3">6. Volume Tampungan</label>
+					<!-- <input id="volumetampung" type="text" value="0" name="info-volume-tampungan" disabled> -->
+					<label id="volumetampung">0</label>
+					<label>m<sup>3</sup></label>
 				</div>
 			</form>
 		</div>
 	</div>
 	<script >
 
-		document.getElementById('checkbox-retail').onclick = function() {
-   		 	document.getElementById('text-retail-persen').disabled = !this.checked;
-   		 	document.getElementById('text-retail-persen').value = 0;
-   		 	getLuas();
-		};
-		document.getElementById('checkbox-apartemen').onclick = function() {
-   		 	document.getElementById('text-apartemen-persen').disabled = !this.checked;
-   		 	document.getElementById('text-apartemen-persen').value = 0;
-   		 	getLuas();
-		};
-		document.getElementById('checkbox-perbelanjaan').onclick = function() {
-   		 	document.getElementById('text-perbelanjaan-persen').disabled = !this.checked;
-   		 	document.getElementById('text-perbelanjaan-persen').value = 0;
-   		 	getLuas();
-		};
+document.getElementById('checkbox-retail').onclick = function() {
+	document.getElementById('text-retail-luas').disabled = !this.checked;
+	document.getElementById('text-retail-luas').value = 0;
+	getLuas();
+};
+document.getElementById('checkbox-apartemen').onclick = function() {
+	document.getElementById('text-apartemen-luas').disabled = !this.checked;
+	document.getElementById('text-apartemen-luas').value = 0;
+	getLuas();
+};
+document.getElementById('checkbox-perbelanjaan').onclick = function() {
+	document.getElementById('text-perbelanjaan-luas').disabled = !this.checked;
+	document.getElementById('text-perbelanjaan-luas').value = 0;
+	getLuas();
+};
 
-		function getLuas(){
-			var klb = document.querySelectorAll('input[name=nilai-KLB]:enabled')
-			var allklb = document.querySelectorAll('input[name=nilai-KLB]')
-			var luaslahan=document.getElementById("totallahan").value
-			var koefisien = document.querySelectorAll('input[type=checkbox]:checked')
-			var arraykoef=[]
-			var arrayklb=[]
-			var jumlahklb=0
-			var jumlahkoef=0
-			var jalan=0
-			var volumtampung=0
-		    console.log("Jumlah klb="+klb.length);
-		    for (var i = 0; i < klb.length; i++) {
-					arrayklb.push(klb[i].value)
-	  				jumlahklb=jumlahklb+Number(klb[i].value)
-				}
-			for (var i = 0; i < (koefisien.length)-2; i++) {
-					arraykoef.push(koefisien[i].value)
-	  				jumlahkoef=jumlahkoef+Number(koefisien[i].value)
-				}
-			if(jumlahklb>60){
-				alert("Total KLB tidak diperbolehkan melebihi 60%");
-				document.getElementById("text-retail-persen").value = 0;
-				document.getElementById("text-apartemen-persen").value = 0;
-				document.getElementById("text-perbelanjaan-persen").value = 0;
-				document.getElementById("text-jalan-persen").value = 0;
-				document.getElementById("volumetampung").value = 0;
-				document.getElementById("volumetampung").style.backgroundColor = "red";
-				jumlahklb=0
-			}
-			else{
-				document.getElementById("volumetampung").style.backgroundColor = "white";
-			}
-			jalan=100-20-jumlahklb
-			document.getElementById("text-jalan-persen").value=jalan	
-			var luasretail=Number(allklb[0].value)/100*luaslahan;
-			var luasapartemen=Number(allklb[1].value)/100*luaslahan;
-			var luasPerbelanjaan=Number(allklb[2].value)/100*luaslahan;
-			var luasjalan=jalan/100*luaslahan;
-			var luasrth=20/100*luaslahan;
-			document.getElementById("text-retail-luas").value = Number(allklb[0].value)*luaslahan/100;
-			document.getElementById("text-apartemen-luas").value = Number(allklb[1].value)*luaslahan/100;
-			document.getElementById("text-perbelanjaan-luas").value = Number(allklb[2].value)*luaslahan/100;
-			document.getElementById("text-jalan-luas").value = jalan*luaslahan/100;
-			document.getElementById("text-RTH-luas").value = 20*luaslahan/100;
-			var cgab=0
-			var cmax=Math.max(...arraykoef)
-			var lsisa=(luasretail)+(luasapartemen)+(luasPerbelanjaan)
-			var crth=0.2
-			var cjalan=0.85
-			var I=31.637
-			var A=luaslahan*0.000001
-			console.log("cmax="+cmax);
-			cgab=((cmax*lsisa)+(crth*luasrth)+(cjalan*luasjalan))/(luaslahan)
-			console.log("cgab="+cgab);
-			var Q=0.278*cgab*I*A
-			console.log("Q="+Q);
-			var jam=0
-			var detik=0
-			if(luaslahan>1000&&luaslahan<=10000){
-				jam=2
-			}
-			else if(luaslahan>10000){
-				jam=3
-			}
-			detik=jam*3600
-			console.log("detik="+detik);
-			volumtampung=Q*detik
-			console.log("volumtampung A="+volumtampung);
-			if(!isFinite(volumtampung)){
-				volumtampung=0
-			}
-			console.log("volumtampung="+volumtampung);
-			document.getElementById("volumetampung").value=volumtampung
+function getLuas() {
+	var klb = document.querySelectorAll('input[name=bangunantext]:enabled')
+	var allklb = document.querySelectorAll('input[name=bangunantext]')
+	var luaslahan = Number(document.getElementById("totallahan").value)
+	var koefisien = document.querySelectorAll('input[type=checkbox]:checked')
+	var luasdasar = Number(document.getElementById("luasdasarbangunan").value)
+	var arraykoef = []
+	var arrayklb = []
+	var arraysemuaklb = []
+	var array3bangunan = []
+	var jumlah3bangunan = 0
+	var jumlahsemuaklb = 0
+	var jumlahklb = 0
+	var jumlahkoef = 0
+	var jalan = 0
+	var volumtampung = 0
+	var sisalahaninfo = 0
+	//console.log("Jumlah klb="+klb.length);
+	for (var i = 0; i < (klb.length) - 1; i++) {
+		//console.log("Nilai Klb ke"+i+" = "+klb[i].value)
+		arrayklb.push(klb[i].value)
+		jumlahklb = jumlahklb + Number(klb[i].value)
+	}
+	for (var i = 0; i < (koefisien.length) - 2; i++) {
+		//console.log("Nilai Koef ke"+i+" = "+koefisien[i].value)
+		arraykoef.push(koefisien[i].value)
+		jumlahkoef = jumlahkoef + Number(koefisien[i].value)
+	}
+	for (var i = 0; i < (allklb.length); i++) {
+		//console.log("Nilai allKlb ke"+i+" = "+allklb[i].value)
+		arraysemuaklb.push(allklb[i].value)
+		jumlahsemuaklb = jumlahsemuaklb + Number(allklb[i].value)
+	}
+	for (var i = 0; i < (allklb.length) - 2; i++) {
+		//console.log("Nilai 3allKlb ke"+i+" = "+allklb[i].value)
+		array3bangunan.push(allklb[i].value)
+		jumlah3bangunan = jumlah3bangunan + Number(allklb[i].value)
+	}
+	// if(jumlahklb>60){
+	// 	alert("Total KLB tidak diperbolehkan melebihi 60%");
+	// 	document.getElementById("text-retail-persen").value = 0;
+	// 	document.getElementById("text-apartemen-persen").value = 0;
+	// 	document.getElementById("text-perbelanjaan-persen").value = 0;
+	// 	document.getElementById("text-jalan-persen").value = 0;
+	// 	document.getElementById("volumetampung").value = 0;
+	// 	document.getElementById("volumetampung").style.backgroundColor = "red";
+	// 	jumlahklb=0
+	// }
+	// else{
+	// 	document.getElementById("volumetampung").style.backgroundColor = "white";
+	// }
+	// var sisalahaninfo=luasdasar-jumlah3bangunan
+	// document.getElementById("infosisalahan").value=sisalahaninfo;
+	// arrayklb
+	var luaskdb = Number(document.getElementById("luasdasarbangunan").value)
+	var luasretail = Number(document.getElementById('text-retail-luas').value)
+	var luasapartemen = Number(document.getElementById('text-apartemen-luas').value)
+	var luasPerbelanjaan = Number(document.getElementById('text-perbelanjaan-luas').value)
+	var luasrth = Number(document.getElementById('text-RTH-luas').value)
+	//console.log("luaslahan = "+luaslahan)
+	//console.log("luasdasar = "+luasdasar)
+	//console.log("luasrth = "+luasrth)
+	var luasjalan = luaslahan - luasdasar - luasrth
+	document.getElementById('text-jalan-luas').value = luasjalan
+	// //console.log("arrayklb = "+arrayklb)
+	// //console.log("array all klb = "+allklb)
+	// //console.log("luaslahan = "+luaslahan)
+	// //console.log("jumlahklb = "+jumlahklb)
+	// //console.log("luasrth = "+luasrth)
+	// //console.log("jumlah3 = "+jumlah3bangunan)
+	// document.getElementById("text-jalan-luas").value = jalan*luaslahan/100;
+	// document.getElementById("text-RTH-luas").value = 20*luaslahan/100;
+	var lsisa = (luasretail) + (luasapartemen) + (luasPerbelanjaan)
+	var kurangi = (luasretail + luasapartemen + luasPerbelanjaan)
+	//console.log("kurangi = "+kurangi)
+	var sisalahaninfo = luasdasar - (luasretail + luasapartemen + luasPerbelanjaan)
+	document.getElementById("infosisalahan").textContent = sisalahaninfo.toFixed(2);
+	var cgab = 0
+	var cmax = Math.max(...arraykoef)
+	var crth = 0.2
+	var cjalan = 0.85
+	var I = 31.637
+	var A = luaslahan * 0.000001
+	if (!isFinite(cmax)) {
+		cmax = 0;
+	}
+	//console.log("cmax="+cmax);
+	cgab = ((cmax * luasdasar) + (crth * luasrth) + (cjalan * luasjalan)) / (luaslahan)
+	//console.log("cgab="+cgab);
+	var Q = 0.278 * cgab * I * A
+	//console.log("Q="+Q);
+	var jam = 0
+	var detik = 0
+	if (luaslahan > 1000 && luaslahan <= 10000) {
+		jam = 2
+	} else if (luaslahan > 10000) {
+		jam = 3
+	}
+	detik = jam * 3600
+	//console.log("detik="+detik);
+	volumtampung = Q * detik
+	//console.log("volumtampung A="+volumtampung);
+	if (!isFinite(volumtampung)) {
+		volumtampung = 0
+	}
+	//console.log("volumtampung="+volumtampung);
+	document.getElementById("volumetampung").textContent = volumtampung.toFixed(3)
+}
 
-		}
-
-		function check60(e){
-		    var check=(e.value>60 );
-		if (check)
-			{
-				alert("Tidak diperbolehkan melebihi 60%");
-				document.getElementById("chk60").value = null;
-			}
-			var sisalahan=document.getElementById("totallahan").value
-			var persen=document.getElementById("chk60").value
-
-			var luasbangunan=sisalahan*(persen/100);
-			 document.getElementById("luasdasarbangunan").value=luasbangunan;
-		}
+function check60(e) {
+	var check = (e.value > 60);
+	if (check) {
+		alert("Persentase KDB tidak diperbolehkan melebihi 60%.");
+		document.getElementById("chk60").value = null;
+	}
+	var sisalahan = document.getElementById("totallahan").value
+	var persen = document.getElementById("chk60").value
+	var luasbangunan = sisalahan * (persen / 100);
+	document.getElementById("luasdasarbangunan").value = luasbangunan;
+}
 
 	</script>
 </body>
