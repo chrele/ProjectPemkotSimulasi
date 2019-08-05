@@ -21,133 +21,85 @@
 			margin: 1em;
 		}
 		header {
-			margin top: 4em;
-            text-align: center;
+			margin top: 4em;	
 		}
-        sup {
-            vertical-align: super;
-            font-size: smaller;
-        }
 	</style>
 </head>
 <body style="align-content: center;">
 	<div class="main">
 		<header>
 			<h3>
-				REKOM
+				INFORMASI YANG TERTERA PADA SKRK
 			</h3>
 		</header>
 		<div class="container main-content">
-            <h4>Informasi yang tertera pada SKRK:</h4>
-            &nbsp;
 			<form class="col-xs-12" method="POST">
 				<div class="col-xs-12">
-					<label class="col-xs-3">1. Sisa Lahan</label>
+					<label class="col-xs-4">1. Sisa Lahan</label>
 					<input id="SisaLahan" onchange="check60()" type="text" name="sisa-lahan">
-
-					<label>m<sup>2</sup></label>
+					<label>m2</label>
 				</div>
 				<div class="col-xs-12">
-					<label class="col-xs-3">2. Persentase KDB</label>
+					<label class="col-xs-4">2. Persentase KDB</label>
 					<input id="chk60" onchange="check60()"  type="text" name="Persentase-kdb">
 					<label>%</label>
 				</div>
 				<div class="col-xs-12">
-					<label class="col-xs-3">3. Luas Bangunan</label>
-                    <label  id="luasBangunan">0</label>
-				<!--	<input id="luasBangunan" type="text"  name="luas-bangunan" disabled> -->
-					<label>m<sup>2</sup></label>
+					<label class="col-xs-4">3. Luas Bangunan</label>
+					<input id="luasBangunan" type="text"  name="luas-bangunan" disabled>
+					<label>m2</label>
 				</div>
-                &nbsp;
 				<div class="col-xs-12">
-					<label class="col-xs-12">4. Jumlah Kegiatan Bangunan Tunggal <a href="assets/files/Tabel%20Pembagian%20Fungsi%20Lahan%20sesuai%20Perwali%20no%2052%20tahun%202017.pdf" target="_blank" style="padding-left: 2%"> Lihat Pedoman</a> </label>
-					<span class="col-xs-3"></span>
-                    <div class=" col-xs-8" style="align-content: center; margin: 0em 0em 1% 0em; padding: 0;">
-
-						<div class="col-xs-12" style="padding: 0;">
+					<label class="col-xs-12">4. Jumlah Kegiatan Bangunan Tinggi</label>
+					<span class="col-xs-4"></span>
+					<div class=" col-xs-6" style="align-content: center; margin: 0em 0em 1em 0em; padding: 0;">
+						<div class="col-xs-5" style="padding: 0;">
 							<div>
-								<!-- 
-                                Kelompok 1, value = 0.65
-                                Kelompok 2, value = 0.60
-                                Kelompok 3, value = 0.75
-                                Kelompok 4, value = 0.70
-                                Kelompok 5, value = 0.75
-                                Kelompok 6, value = 0.85
-                                Kelompok 7, value = 0.70
-                                Kelompok 8, value = 0.90
-                                Kelompok 9, value = 0.20
-                                Kelompok 10, value = 0.15
-                                -->
-								<label class="col-xs-5" style="padding: 0;"><input id="checkbox-kelompok1" type="checkbox" name="kelompok1-checkbox" value="0.65" style="margin-right: 1em;">Kelompok 1</label>
-								<input id="text-kelompok1" type="text" name="nilailuas" value="0" onchange="volumeTampung()" disabled>
-								<label>m<sup>2</sup></label>	
+								<input type="checkbox" name="kelompok" value="0.65" onchange="volumeTampung()">Kelompok 1
 							</div>
 							<div>
-								<label class="col-xs-5" style="padding: 0;"><input id="checkbox-kelompok2" type="checkbox" name="kelompok2-checkbox" value="0.60" style="margin-right: 1em;">Kelompok 2</label>
-								<input id="text-kelompok2" type="text" name="nilailuas" value="0" onchange="volumeTampung()" disabled>
-								<label>m<sup>2</sup></label>
+								<input type="checkbox" name="kelompok" value="0.60" onchange="volumeTampung()">Kelompok 2
 							</div>
 							<div>
-								<label class="col-xs-5" style="padding: 0;"><input id="checkbox-kelompok3" type="checkbox" name="kelompok3-checkbox" value="0.75" style="margin-right: 1em;">Kelompok 3</label>
-								<input id="text-kelompok3" type="text" name="nilailuas" value="0" onchange="volumeTampung()" disabled>
-								<label>m<sup>2</sup></label>
+								<input type="checkbox" name="kelompok" value="0.75" onchange="volumeTampung()">Kelompok 3
 							</div>
 							<div>
-								<label class="col-xs-5" style="padding: 0;"><input id="checkbox-kelompok4" type="checkbox" name="kelompok4-checkbox" value="0.70" style="margin-right: 1em;">Kelompok 4</label>
-								<input id="text-kelompok4" type="text" name="nilailuas" value="0" onchange="volumeTampung()" disabled>
-								<label>m<sup>2</sup></label>
-							</div>
-							<div>								
-								<label class="col-xs-5" style="padding: 0;"><input id="checkbox-kelompok5" type="checkbox" name="kelompok5-checkbox" value="0.75" style="margin-right: 1em;">Kelompok 5</label>
-								<input id="text-kelompok5" type="text" name="nilailuas" value="0" onchange="volumeTampung()" disabled>
-								<label>m<sup>2</sup></label>
+								<input type="checkbox" name="kelompok" value="0.70" onchange="volumeTampung()">Kelompok 4
 							</div>
 							<div>
-								<label class="col-xs-5" style="padding: 0;"><input id="checkbox-kelompok6" type="checkbox" name="kelompok6-checkbox" value="0.85" style="margin-right: 1em;">Kelompok 6</label>
-								<input id="text-kelompok6" type="text" name="nilailuas" value="0" onchange="volumeTampung()" disabled>
-								<label>m<sup>2</sup></label>
-							</div>
-                            <div>
-								<label class="col-xs-5" style="padding: 0;"><input id="checkbox-kelompok7" type="checkbox" name="kelompok7-checkbox" value="0.70" style="margin-right: 1em;">Kelompok 7</label>
-								<input id="text-kelompok7" type="text" name="nilailuas" value="0" onchange="volumeTampung()" disabled>
-								<label>m<sup>2</sup></label>
-							</div>
-                            <div>
-								<label class="col-xs-5" style="padding: 0;"><input id="checkbox-kelompok8" type="checkbox" name="kelompok8-checkbox" value="0.90" style="margin-right: 1em;">Kelompok 8</label>
-								<input id="text-kelompok8" type="text" name="nilailuas" value="0" onchange="volumeTampung()" disabled>
-								<label>m<sup>2</sup></label>
-							</div>
-                            <div>
-								<label class="col-xs-5" style="padding: 0;"><input id="checkbox-kelompok9" type="checkbox" name="kelompok9-checkbox" value="0.20" style="margin-right: 1em;">Kelompok 9</label>
-								<input id="text-kelompok9" type="text" name="nilailuas" value="0" onchange="volumeTampung()" disabled>
-								<label>m<sup>2</sup></label>
-							</div>
-                            <div>
-								<label class="col-xs-5" style="padding: 0;"><input id="checkbox-kelompok10" type="checkbox" name="kelompok10-checkbox" value="0.15" style="margin-right: 1em;">Kelompok 10</label>
-								<input id="text-kelompok10" type="text" name="nilailuas" value="0" onchange="volumeTampung()" disabled>
-								<label>m<sup>2</sup></label>
+								<input type="checkbox" name="kelompok" value="0.75" onchange="volumeTampung()">Kelompok 5
 							</div>
 						</div>
-					</div>	
+						<div class="col-xs-5" style="padding: 0;">
+							
+							<div>
+								<input type="checkbox" name="kelompok" value="0.85" onchange="volumeTampung()">Kelompok 6
+							</div>
+							<div>
+								<input type="checkbox" name="kelompok" value="0.70" onchange="volumeTampung()">Kelompok 7
+							</div>
+							<div>
+								<input type="checkbox" name="kelompok" value="0.90" onchange="volumeTampung()">Kelompok 8
+							</div>
+							<div>
+								<input type="checkbox" name="kelompok" value="0.20" onchange="volumeTampung()">Kelompok 9
+							</div>
+							<div>
+								<input type="checkbox" name="kelompok" value="0.15" onchange="volumeTampung()">Kelompok 10
+							</div>
+						</div>	
+					</div>
 				</div>
-                <div class="col-xs-12">
-					<label class="col-xs-3">5. Informasi Sisa Lahan</label>
-					<input id="infosisalahan" type="text" onchange="volumeTampung()" name="info-sisa-lahan" value="0" disabled>
-					<label>m<sup>2</sup></label>
-					<label id="warninginfosisalahan" style="font-style:italic; font-size: 10pt;"></label>
-				</div>
-                &nbsp;
-                &nbsp;
 				<div class="col-xs-12">
-					<label class="col-xs-3">6. Volume Tampungan</label>
+					<label class="col-xs-4">5. Volume Tampungan</label>
 					<input id="volumTampung" value="0" type="text" name="Volum-Tampung" disabled>
-					<label>m<sup>3</sup></label>
+					<label>m3</label>
 				</div>
 			</form>
 		</div>
 	</div>
 	 <script>
-         
+	 	//checkzero
         //enable checklist
         document.getElementById('checkbox-kelompok1').onclick = function() {
    		 	document.getElementById('text-kelompok1').disabled = !this.checked;
@@ -285,7 +237,7 @@ function volumeTampung() {
 		volumetampung = 0
 	}
 	if (sisalahaninfo==0){
-		document.getElementById("infosisalahan").style.color = "black";
+		document.getElementById("infosisalahan").style.color = "inherit";
 		document.getElementById("warninginfosisalahan").textContent ="";
 		document.getElementById("volumTampung").value = volumetampung.toFixed(3);
 	}
